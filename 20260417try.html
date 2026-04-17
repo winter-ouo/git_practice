@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>個人自我介紹 | 我的品牌</title>
+    
+    <style>
+        /* 定義全局變數，方便日後改顏色 */
+        :root {
+            --primary-color: #4a90e2;
+            --secondary-color: #2c3e50;
+            --bg-light: #f9f9f9;
+            --text-dark: #333;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "PingFang TC", "Microsoft JhengHei", sans-serif;
+            line-height: 1.8;
+            color: var(--text-dark);
+            scroll-behavior: smooth;
+        }
+
+        /* 導覽列 */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 10%;
+            background: rgba(255, 255, 255, 0.95);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 2rem;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--secondary-color);
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        /* 英雄區 (Hero) */
+        header {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1352&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: var(--white);
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+
+        .cta-btn {
+            padding: 12px 35px;
+            background: var(--primary-color);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: 0.3s transform;
+        }
+
+        .cta-btn:hover {
+            transform: scale(1.05);
+        }
+
+        /* 通用區塊樣式 */
+        section {
+            padding: 100px 15%;
+        }
+
+        h2.section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        h2.section-title::after {
+            content: '';
+            width: 50px;
+            height: 4px;
+            background: var(--primary-color);
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* 關於我 */
+        #about {
+            background: var(--white);
+        }
+
+        /* 技能區 */
+        #skills {
+            background: var(--bg-light);
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .skill-card i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        /* 頁尾 */
+        footer {
+            background: var(--secondary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 3rem 0;
+        }
+
+        .footer-links a {
+            color: var(--white);
+            margin: 0 10px;
+            text-decoration: none;
+            opacity: 0.7;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+        }
+
+        /* 響應式調整 */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.5rem; }
+            nav { padding: 1rem 5%; }
+            nav ul { display: none; } /* 簡化：手機版隱藏選單 */
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">PORTFOLIO.</div>
+        <ul>
+            <li><a href="#home">首頁</a></li>
+            <li><a href="#about">關於</a></li>
+            <li><a href="#skills">技能</a></li>
+            <li><a href="#contact">聯絡</a></li>
+        </ul>
+    </nav>
+
+    <header id="home">
+        <h1>你好，我是 [你的姓名]</h1>
+        <p>熱衷於後端自動化與 AI 應用的開發者，喜歡用程式解決現實世界的問題 (๑•̀ㅂ•́)و✧</p>
+        <a href="#about" class="cta-btn">開始探索</a>
+    </header>
+
+    <section id="about">
+        <h2 class="section-title">關於我</h2>
+        <div style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 40px;">
+            <div class="about-text" style="flex: 1; min-width: 300px;">
+                <h3>致力於打造高效能的解決方案</h3>
+                <p>我是一名專注於電腦科學與工程的學生。目前的主要研究領域包含機器學習（特別是 YOLO 目標檢測）與自動化工作流（n8n）。</p>
+                <p>我習慣在 WSL2 環境下進行開發，熟悉 Python、C++ 等多種語言。不只是寫程式，我更在乎系統的穩定性與安全性。</p>
+            </div>
+            <div class="about-img" style="flex: 1; min-width: 300px; text-align: center;">
+                <img src="https://via.placeholder.com/400x300" alt="個人照" style="width: 100%; border-radius: 20px; box-shadow: 20px 20px 0 var(--primary-color);">
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2 class="section-title">專業技能</h2>
+        <div class="skills-container">
+            <div class="skill-card">
+                <h3>開發語言</h3>
+                <p>Python, C/C++, Java, HTML/CSS</p>
+            </div>
+            <div class="skill-card">
+                <h3>AI 與影像處理</h3>
+                <p>YOLO 物件偵測、機器學習模型訓練</p>
+            </div>
+            <div class="skill-card">
+                <h3>自動化工具</h3>
+                <p>n8n 流程串接、Docker 容器化部署</p>
+            </div>
+            <div class="skill-card">
+                <h3>系統開發</h3>
+                <p>WSL2 環境、FastAPI、API 安全管理</p>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <h2 style="margin-bottom: 1rem;">聯絡我</h2>
+        <p>如果您對我的專案感興趣，歡迎隨時聯絡！</p>
+        <div class="footer-links" style="margin: 1.5rem 0;">
+            <a href="#">GitHub</a>
+            <a href="#">LinkedIn</a>
+            <a href="#">Instagram</a>
+        </div>
+        <p style="font-size: 0.9rem; opacity: 0.6;">&copy; 2026 Your Name. 使用 HTML/CSS 打造。</p>
+    </footer>
+
+    <script>
+        // 簡單的導覽列滾動效果：當頁面滾動時，導覽列會變得更明顯
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.style.background = '#ffffff';
+                nav.style.padding = '0.8rem 10%';
+            } else {
+                nav.style.background = 'rgba(255, 255, 255, 0.95)';
+                nav.style.padding = '1rem 10%';
+            }
+        });
+
+        // 點擊平滑滾動（部分舊瀏覽器支援）
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
